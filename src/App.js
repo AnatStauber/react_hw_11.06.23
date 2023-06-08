@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Counter from "./components/counter";
 import Gallery from "./components/gallery";
+import Colors from "./components/colors";
 
 function App() {
  
@@ -11,6 +12,8 @@ function App() {
         <Counter />
         <br></br>
         <Gallery />
+        <br></br>
+        <Colors />
         </div>
   )
 }

@@ -28,14 +28,14 @@ export default class Gallery extends Component{
     render() {
         return (
             <div>
-                <h2 class="text-success text-decoration-underline"> assignment 2:</h2>
+                <h2 className="text-success text-decoration-underline"> assignment 2:</h2>
                <br></br>
-                <div class="">
+                <div >
                     <div> 
-                    <img class="col-4" src={this.images_ar[this.state.counter]}></img>
+                    <img className="col-4" src={this.images_ar[this.state.counter]}></img>
                     </div>
                     <br></br>
-                <div class="col-4 d-flex justify-content-between">
+                <div className="col-4 d-flex justify-content-between">
                 <button  onClick={this.back}> Previous </button>
                 <button  onClick={this.next}> Next </button>
                 </div>
