@@ -7,24 +7,25 @@ state = {selected:" "};
 
 handleChange = () => {
     let e = document.getElementById("select_id");
-    let value = e.options[e.selectedIndex].value;
+    let value = e.value;
     this.setState({selected:value});
-    console.log("state: " , this.state.selected);
-    // let span = document.getElementById("id_span");
-    // span.style.color = this.state.selected;
+    let currColor = this.state.selected;
+    let span = document.getElementById("id_span");
+    span.style.color = currColor;
+   
 }
 
 
 render() {
-    
+    let currColor = this.state.selected;
     return (
         <div>
             <h2 className="text-success text-decoration-underline"> assignment 3:  </h2>
             <br></br>
-            <h2> Choose your favorite colors: <span style={{"color": this.state.selected}} id="id_span">{this.state.selected}</span> </h2>
+            <h2> Choose your favorite colors: <span style={{"color": currColor}} id="id_span">{currColor}</span> </h2>
             <select id="select_id" defaultValue={"color:"}
                 onChange={this.handleChange} >
-                <option  value="">
+                <option value="">
                 colors:
                 </option>
                 <option value="red">red</option>
