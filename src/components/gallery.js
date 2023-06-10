@@ -31,13 +31,14 @@ export default class Gallery extends Component{
                 <h2 className="text-success text-decoration-underline"> assignment 2:</h2>
                <br></br>
                 <div >
-                    <div> 
-                    <img className="col-4" src={this.images_ar[this.state.counter]}></img>
-                    </div>
+                   
                     <br></br>
-                <div className="col-4 d-flex justify-content-between">
-                <button  onClick={this.back}> Previous </button>
-                <button  onClick={this.next}> Next </button>
+                <div className="d-flex justify-content-between">
+                <button  onClick={this.back}> &lt; </button>
+                
+                    <img className="col-4" src={this.images_ar[this.state.counter]} alt="pic"></img>
+                    
+                <button  onClick={this.next}> &gt; </button>
                 </div>
                 </div>
             </div>

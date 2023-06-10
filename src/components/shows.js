@@ -1,3 +1,4 @@
+import { createRef } from "react";
 import { Component } from "react";
 
 export default class Shows extends Component{
@@ -5,11 +6,12 @@ export default class Shows extends Component{
 
     shows_ar = ["images/friends.jpg","images/seinfeld.jpg","images/theGoodPlace.jpg"];
 
+    selectRef=createRef();
+    
     state = {selected:""};
 
     handleChange = () => {
-        let select = document.getElementById("selectShow_id");
-        this.setState({selected:select.value});
+        this.setState({selected:this.selectRef.current.value});
         let img = document.getElementById("img_id");
         img.style.display = "block";
     }
@@ -20,7 +22,7 @@ export default class Shows extends Component{
                 <h2 className="text-success text-decoration-underline"> assignment 4:  </h2>
                 <br></br>
                 <h2> Choose your favorite show: </h2>
-                <select id="selectShow_id" defaultValue={"shows:"} onChange={this.handleChange} >
+                <select id="selectShow_id" defaultValue={"shows:"} onChange={this.handleChange} ref={this.selectRef} >
                         <option value="">
                         shows:
                         </option>
@@ -28,7 +30,9 @@ export default class Shows extends Component{
                         <option value="1">Seinfeld</option>
                         <option value="2">The Good Place</option>
                     </select>
-                <img id="img_id" className="col-4" style={{"display":"none"}} src={this.shows_ar[this.state.selected]}></img>
+                    <div className="center">
+                <img id="img_id" className="w-50" style={{"display":"none"}} src={this.shows_ar[this.state.selected]} alt="show"></img>
+                </div>
             </div>
         )
     }

@@ -1,22 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import Counter from "./components/counter";
-import Gallery from "./components/gallery";
-import Colors from "./components/colors";
-import Shows from "./components/shows";
+import AppHW from './components/appHW';
 
 function App() {
  
     return (
-      <div className="container">
-        <h1 className='text-danger'>React</h1>
-        <Counter />
-        <br></br>
-        <Gallery />
-        <br></br>
-        <Colors />
-        <hr></hr>
-        <Shows />
+      <div>
+
+     
+      <div className='container center'>
+        <h1 className='text-danger'>React Homework - Anat Stauber</h1>
+      </div>
+      
+      <div className="container center">
+        <AppHW />
+        </div>
         </div>
   )
 }
