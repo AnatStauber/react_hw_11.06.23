@@ -5,14 +5,11 @@ export default class Colors extends Component{
 state = {selected:" "};
 
 
+
 handleChange = () => {
     let e = document.getElementById("select_id");
     let value = e.value;
     this.setState({selected:value});
-    let currColor = this.state.selected;
-    let span = document.getElementById("id_span");
-    span.style.color = currColor;
-   
 }
 
 
