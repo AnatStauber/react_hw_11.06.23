@@ -1,27 +1,36 @@
-import { Component } from "react";
+// rfc
+// react function componnent
 
-export default class Counter extends Component{
+// rafce
+// react aroow function componnent
+import React, { useState } from 'react'
 
-    state = {counter:0};
+export default function Counter() {
+  // state = {counter:2};
+  // useState -> הוק שיודע לייצר סטייטי
+  // מחזיר מערך שאנחנו מפרקים אותו ל2 תאים
+  // תא ראשון יחזיר משתנה שמכיל את הערך של הסטייט 
+  // במקרה שלנו 4 , תא 2 מכיל פונקציה שיודעת
+  // להשפיע על הערך של הסטייט בתא 1 ככה שהכל
+  // יעבוד דרך הריאקט דום
+  const [counter,setCounter] = useState(4);
+  const [user,setUser] = useState("koko");
 
-    add1 = () => {
-        if (this.state.counter<=4){
-            this.setState({counter:this.state.counter+1});
-        }
-        else {
-            this.setState({counter:0});
-        }
+  const onAdd1 = () => {
+    // this.setState({counter:this.state.counter+1})
+    setCounter(counter+1);
+    if(counter+1 > 10){
+      setUser("jack")
     }
+  }
 
-render() {
-    return (
-        <div>
-            <h2 className="text-success text-decoration-underline"> assignment 1:</h2>
-            <h2> Counter : {this.state.counter}</h2>
-            <button onClick={this.add1} > + </button>
-        </div>
-    )
-}
-
-
+  return (
+    <div className='container'>
+      <h2>Counter {user}: {counter}</h2>
+      <button onClick={onAdd1}>Add 1</button>
+      <button onClick={() => {
+        setCounter(counter-5)
+      }}>reduce 5 </button>
+    </div>
+  )
 }

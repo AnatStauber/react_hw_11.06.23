@@ -1,5 +1,6 @@
 import './App.css';
-import AppHW from './components/appHW';
+import AppCasino from './components/appCasino';
+
 
 function App() {
  
@@ -12,7 +13,7 @@ function App() {
       </div>
       
       <div className="container center">
-        <AppHW />
+        <AppCasino />
         </div>
         </div>
   )
